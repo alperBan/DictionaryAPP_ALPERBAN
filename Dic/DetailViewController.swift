@@ -78,7 +78,6 @@ class DetailViewController: UIViewController,LoadingShowable {
     
     func fetchAudioData(audioURLStrings: [String]) {
         guard currentAudioURLIndex < audioURLStrings.count else {
-            // Tüm URL'ler geçerli değilse
             return
         }
         
@@ -121,53 +120,63 @@ class DetailViewController: UIViewController,LoadingShowable {
     
     
     @IBAction func nounButtonTapped(_ sender: UIButton) {
-        // Filter the meanings and reload the table view
+        updateButtonAppearance(sender)
         filteredMeanings = meanings.filter { $0.partOfSpeech == "noun" }
         listTableView.reloadData()
         listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         
-        // Show the removeButton
+        
         removeButton.isHidden = false
     }
     
     @IBAction func verbButtonTapped(_ sender: UIButton) {
-        // Filter the meanings and reload the table view
+        updateButtonAppearance(sender)
         filteredMeanings = meanings.filter { $0.partOfSpeech == "verb" }
         listTableView.reloadData()
         listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         
-        // Show the removeButton
+        
         removeButton.isHidden = false
     }
     
     @IBAction func adjectiveButtonTapped(_ sender: UIButton) {
-        // Filter the meanings and reload the table view
+        updateButtonAppearance(sender)
         filteredMeanings = meanings.filter { $0.partOfSpeech == "adjective" }
         listTableView.reloadData()
         listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         
-        // Show the removeButton
-        removeButton.isHidden = false
+                removeButton.isHidden = false
     }
     
     @IBAction func adverbButtonTapped(_ sender: UIButton) {
-        // Filter the meanings and reload the table view
+        updateButtonAppearance(sender)
         filteredMeanings = meanings.filter { $0.partOfSpeech == "adverb" }
         listTableView.reloadData()
         listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        
         // Show the removeButton
         removeButton.isHidden = false
     }
     
     @IBAction func removeButtonTapped(_ sender: UIButton) {
+        updateButtonAppearance(sender)
         // Reset the filteredMeanings to show all meanings and reload the table view
         filteredMeanings = meanings
         listTableView.reloadData()
         listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        
         // Hide the removeButton again
         removeButton.isHidden = true
+    }
+    private func updateButtonAppearance(_ button: UIButton) {
+        // Tüm butonların kenarlık rengini normale döndür
+        nounButton.layer.borderColor = UIColor.clear.cgColor
+        verbButton.layer.borderColor = UIColor.clear.cgColor
+        adjectiveButton.layer.borderColor = UIColor.clear.cgColor
+        adverButton.layer.borderColor = UIColor.clear.cgColor
+        
+        // Tıklanan butonun kenarlık rengini güncelle
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderWidth = 2.0
+        button.layer.cornerRadius = 8.0
     }
     
     @IBAction func audioButtonTapped(_ sender: UIButton) {
@@ -265,7 +274,7 @@ class DetailViewController: UIViewController,LoadingShowable {
                         if definitionIndex < definitionsCount {
                             let definition = meaning.definitions[definitionIndex]
                             
-                            cell.numberLabel.text = "\(indexPath.row + 1)"
+                            cell.numberLabel.text = "\(indexPath.row + 1)-"
                             cell.partOfSpeechLabel.text = meaning.partOfSpeech
                             cell.definitionsLabel.text = definition.definition
                             
