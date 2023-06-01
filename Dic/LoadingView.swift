@@ -17,7 +17,7 @@ class LoadingView{
     }
     
     func configure() {
-        blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         blurView.translatesAutoresizingMaskIntoConstraints = false
         blurView.frame = UIWindow(frame: UIScreen.main.bounds).frame
         activityIndicator.center = blurView.center

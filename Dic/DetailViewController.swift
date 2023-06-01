@@ -35,7 +35,7 @@ class DetailViewController: UIViewController,LoadingShowable {
         navigationController?.navigationBar.topItem?.title = ""
         navigationController?.navigationBar.tintColor = UIColor.darkGray
         removeButton.isHidden = true
-        wordLabel.text = word.uppercased()
+        wordLabel.text = word.capitalizingFirstLetter()
         service.fetchDictionary(word: word) { [weak self] response in
             switch response {
             case .success(let data):
@@ -56,11 +56,11 @@ class DetailViewController: UIViewController,LoadingShowable {
                 self.listTableView.reloadData()
                 
                 let audioURLStrings = data.0.flatMap { $0.phonetics.compactMap { $0.audio } }
-                if !audioURLStrings.isEmpty {
-                    self.fetchAudioData(audioURLStrings: audioURLStrings)
-                } else {
-                    self.audioButton.isEnabled = false
-                }
+                        if !audioURLStrings.isEmpty {
+                            self.fetchAudioData(audioURLStrings: audioURLStrings)
+                        } else {
+                            self.audioButton.isHidden = true // Hide the audio button if audioURLStrings is empty
+                        }
                 
                 self.synonymsArray = data.1.compactMap { $0.word }
                 print("Synonyms Array: \(self.synonymsArray.prefix(5))")
@@ -78,12 +78,13 @@ class DetailViewController: UIViewController,LoadingShowable {
     
     func fetchAudioData(audioURLStrings: [String]) {
         guard currentAudioURLIndex < audioURLStrings.count else {
+            audioButton.isHidden = true // Hide the audio button if no audio URLs are available
             return
         }
         
         let audioURLString = audioURLStrings[currentAudioURLIndex]
         guard let audioURL = URL(string: audioURLString) else {
-            // Geçerli bir URL değil
+            // Invalid URL, try the next one
             currentAudioURLIndex += 1
             fetchAudioData(audioURLStrings: audioURLStrings)
             return
@@ -94,16 +95,18 @@ class DetailViewController: UIViewController,LoadingShowable {
                 let audioData = try Data(contentsOf: audioURL)
                 
                 if audioData.isEmpty {
-                    // Eğer gelen audio verisi boş ise, bir sonraki URL'den veri almak için fonksiyonu tekrar çağırıyoruz
+                    // If the audio data is empty, move to the next URL
                     self?.currentAudioURLIndex += 1
                     self?.fetchAudioData(audioURLStrings: audioURLStrings)
                 } else {
                     DispatchQueue.main.async {
                         self?.initializeAudioPlayer(with: audioData)
+                        self?.audioButton.isHidden = false // Show the audio button when audio data is available
                     }
                 }
             } catch {
                 print("Error loading audio data: \(error)")
+                self?.audioButton.isHidden = true // Hide the audio button if there's an error loading the audio data
             }
         }
     }
@@ -275,7 +278,10 @@ class DetailViewController: UIViewController,LoadingShowable {
                             let definition = meaning.definitions[definitionIndex]
                             
                             cell.numberLabel.text = "\(indexPath.row + 1)-"
-                            cell.partOfSpeechLabel.text = meaning.partOfSpeech
+                            if let partOfSpeech = meaning.partOfSpeech {
+                                    let capitalizedPartOfSpeech = partOfSpeech.prefix(1).capitalized + partOfSpeech.dropFirst()
+                                    cell.partOfSpeechLabel.text = capitalizedPartOfSpeech
+                                }
                             cell.definitionsLabel.text = definition.definition
                             
                             if let exampleText = definition.example {
@@ -299,5 +305,9 @@ class DetailViewController: UIViewController,LoadingShowable {
             }
         }
     }
-
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+}
 
