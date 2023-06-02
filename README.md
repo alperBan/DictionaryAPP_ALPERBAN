@@ -5,7 +5,11 @@ This project is a dictionary application where users can search for words and fi
 ## Screenshots
 
 
-https://github.com/alperBan/DictionaryAPP_ALPERBAN/assets/114400196/de2d3331-6d97-4b58-9083-ba00f54e0c9f
+
+https://github.com/alperBan/DictionaryAPP_ALPERBAN/assets/114400196/d409a632-3e9b-4bf5-b018-906e85fcfb55
+
+
+
 
 
 ## Features
