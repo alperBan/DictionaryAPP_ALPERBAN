@@ -2,9 +2,10 @@
 //  LoadingView.swift
 //  Dic
 //
-//  Created by Alper Ban on 30.05.2023.
+//  Created by Alper Ban on 2.06.2023.
 //
 
+import Foundation
 import UIKit
 
 class LoadingView{
@@ -17,7 +18,7 @@ class LoadingView{
     }
     
     func configure() {
-        blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         blurView.translatesAutoresizingMaskIntoConstraints = false
         blurView.frame = UIWindow(frame: UIScreen.main.bounds).frame
         activityIndicator.center = blurView.center

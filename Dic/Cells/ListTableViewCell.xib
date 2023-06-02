@@ -31,12 +31,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP4-GK-wo4">
-                                <rect key="frame" x="24" y="96" width="288" height="21"/>
+                                <rect key="frame" x="8" y="96" width="304" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="W2T-V1-YaJ"/>
+                                    <constraint firstAttribute="width" constant="304" id="W2T-V1-YaJ"/>
                                     <constraint firstAttribute="height" constant="21" id="woE-fE-KOp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -78,7 +78,7 @@
                             <constraint firstAttribute="trailing" secondItem="bvo-Hv-eiy" secondAttribute="trailing" constant="16" id="DTh-aj-8n1"/>
                             <constraint firstItem="rFD-jK-9sS" firstAttribute="top" secondItem="08c-Yq-1Wl" secondAttribute="top" constant="8" id="FPU-Hv-u3u"/>
                             <constraint firstItem="bvo-Hv-eiy" firstAttribute="top" secondItem="xP4-GK-wo4" secondAttribute="bottom" constant="16" id="Hej-kd-Sh9"/>
-                            <constraint firstItem="xP4-GK-wo4" firstAttribute="leading" secondItem="08c-Yq-1Wl" secondAttribute="leading" constant="24" id="LKF-nO-GJa"/>
+                            <constraint firstItem="xP4-GK-wo4" firstAttribute="leading" secondItem="08c-Yq-1Wl" secondAttribute="leading" constant="8" id="LKF-nO-GJa"/>
                             <constraint firstItem="N7P-ME-id6" firstAttribute="top" secondItem="08c-Yq-1Wl" secondAttribute="top" constant="6" id="RJd-4g-IO4"/>
                             <constraint firstAttribute="trailing" secondItem="xP4-GK-wo4" secondAttribute="trailing" constant="8" id="SEd-FD-lKA"/>
                             <constraint firstItem="cj3-G4-0pP" firstAttribute="top" secondItem="N7P-ME-id6" secondAttribute="bottom" constant="2" id="ZJC-4z-bji"/>

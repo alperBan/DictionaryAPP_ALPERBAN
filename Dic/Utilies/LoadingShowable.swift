@@ -1,11 +1,10 @@
+////
+////  LoadingShowable.swift
+////  Dic
+////
+////  Created by Alper Ban on 2.06.2023.
+////
 //
-//  LoadingShowable.swift
-//  Dic
-//
-//  Created by Alper Ban on 30.05.2023.
-//
-
-
 import UIKit
 
 protocol LoadingShowable where Self: UIViewController {
