@@ -5,8 +5,7 @@ This project is a dictionary application where users can search for words and fi
 ## Screenshots
 
 
-
-https://github.com/alperBan/DictionaryAPP_ALPERBAN/assets/114400196/d409a632-3e9b-4bf5-b018-906e85fcfb55
+https://github.com/alperBan/DictionaryAPP_ALPERBAN/assets/114400196/30c66bc1-669f-4c2d-b744-fadecbddbf11
 
 
 
@@ -30,7 +29,6 @@ https://github.com/alperBan/DictionaryAPP_ALPERBAN/assets/114400196/d409a632-3e9
   ```shell
   cd DictionaryAPP_AlperBAN
 - Open the DictionaryAPP_AlperBAN.xcworkspace file with Xcode:
-  ```shell
 open DictionaryAPP_AlperBAN.xcworkspace
 Run the project in Xcode (Command+R) and view the application in the iOS simulator.
 ## Usage
