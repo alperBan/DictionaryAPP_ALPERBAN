@@ -40,12 +40,11 @@ class DetailViewController: UIViewController, LoadingShowable {
                     return
                 }
                 
-                guard let phonetics = data.0.first?.phonetics else {
-                    return
-                }
-                
-                if let firstPhonetic = phonetics.first {
+                if let phonetics = data.0.first?.phonetics, let firstPhonetic = phonetics.first {
                     self.phoneticLabel.text = firstPhonetic.text
+                    self.phoneticLabel.isHidden = false
+                } else {
+                    self.phoneticLabel.isHidden = true
                 }
                 
                 self.meanings = data.0.first?.meanings ?? []
