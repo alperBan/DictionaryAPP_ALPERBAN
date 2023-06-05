@@ -33,6 +33,9 @@ class DetailViewController: UIViewController, LoadingShowable {
         removeButton.isHidden = true
         wordLabel.text = word.capitalizingFirstLetter()
         
+        // Hide the phoneticLabel initially
+        phoneticLabel.isHidden = true
+        
         service.fetchDictionary(word: word) { [weak self] response in
             switch response {
             case .success(let data):
@@ -43,8 +46,6 @@ class DetailViewController: UIViewController, LoadingShowable {
                 if let phonetics = data.0.first?.phonetics, let firstPhonetic = phonetics.first {
                     self.phoneticLabel.text = firstPhonetic.text
                     self.phoneticLabel.isHidden = false
-                } else {
-                    self.phoneticLabel.isHidden = true
                 }
                 
                 self.meanings = data.0.first?.meanings ?? []
@@ -56,7 +57,7 @@ class DetailViewController: UIViewController, LoadingShowable {
                 if !audioURLStrings.isEmpty {
                     self.fetchAudioData(audioURLStrings: audioURLStrings)
                 } else {
-                    self.audioButton.isHidden = true // Hide the audio button if audioURLStrings is empty
+                    self.audioButton.isHidden = true
                 }
                 
                 self.synonymsArray = data.1.compactMap { $0.word }
