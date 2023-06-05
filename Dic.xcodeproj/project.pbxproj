@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2403C79A2A251D6D00C245AA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2403C7982A251D6D00C245AA /* SearchTableViewCell.swift */; };
 		2403C79B2A251D6D00C245AA /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2403C7992A251D6D00C245AA /* SearchTableViewCell.xib */; };
+		243560CA2A2E467800303D35 /* DictionaryAPI in Resources */ = {isa = PBXBuildFile; fileRef = 243560C92A2E467700303D35 /* DictionaryAPI */; };
 		247972372A25D4F300D9B27F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247972352A25D4F300D9B27F /* ListTableViewCell.swift */; };
 		247972382A25D4F300D9B27F /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247972362A25D4F300D9B27F /* ListTableViewCell.xib */; };
 		247972402A261BEE00D9B27F /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2479723F2A261BEE00D9B27F /* CornerRadius.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		2403C7982A251D6D00C245AA /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		2403C7992A251D6D00C245AA /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		243560C92A2E467700303D35 /* DictionaryAPI */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper; path = DictionaryAPI; sourceTree = "<group>"; };
 		247972352A25D4F300D9B27F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		247972362A25D4F300D9B27F /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		2479723F2A261BEE00D9B27F /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		249824F22A236E750088A280 = {
 			isa = PBXGroup;
 			children = (
+				243560C92A2E467700303D35 /* DictionaryAPI */,
 				249824FD2A236E750088A280 /* Dic */,
 				249825172A236E760088A280 /* DicTests */,
 				249825212A236E760088A280 /* DicUITests */,
@@ -323,6 +326,7 @@
 				2498250B2A236E760088A280 /* Assets.xcassets in Resources */,
 				249825062A236E750088A280 /* Main.storyboard in Resources */,
 				247972382A25D4F300D9B27F /* ListTableViewCell.xib in Resources */,
+				243560CA2A2E467800303D35 /* DictionaryAPI in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
